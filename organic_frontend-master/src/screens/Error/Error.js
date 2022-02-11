@@ -5,8 +5,8 @@ const Error = () => {
   return (
     <div>
       <div id="error-page">
-        <div class="content">
-          <h2 class="header" data-text="404">
+        <div className="content">
+          <h2 className="header" data-text="404">
             404
           </h2>
           <h4 data-text="Opps! Page not found">
@@ -17,7 +17,7 @@ const Error = () => {
             exist. If you think something is broken, report
             a problem.
           </p>
-          <div class="btns">
+          <div className="btns">
             <Link to="/">Go To Home</Link>
           </div>
         </div>
