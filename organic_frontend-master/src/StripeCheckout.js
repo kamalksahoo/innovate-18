@@ -44,7 +44,7 @@ const StripeCheckout = (props) => {
         amount={bill}
         name="Buy Vegetables"
       >
-        <button disabled={props.disabled} className="btn btn-success">Pay with stripe</button>
+        <button  className="btn btn-success">Pay with stripe</button>
       </StripeCheckoutButton>
     );
   }; 

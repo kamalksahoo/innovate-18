@@ -101,16 +101,18 @@ const Cart = (props) => {
           <br />
           <br />
           {/* bill conatiner */}
-          <div className="container border border-black">
-            <h1 className="text-center">
-              Bill : Rs {total}
-            </h1>
-            <StripeCheckout
-              disabled={disabled}
-              token={props.user.user}
-              total={(total / 60) * 100}
-            />
-          </div>
+          {!disabled && (
+            <div className="container border border-black">
+              <h1 className="text-center">
+                Bill : Rs {total}
+              </h1>
+              <StripeCheckout
+                disabled={disabled}
+                token={props.user.user}
+                total={(total / 60) * 100}
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>
