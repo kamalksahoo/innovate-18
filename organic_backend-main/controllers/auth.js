@@ -1,6 +1,5 @@
 require("dotenv").config();
 const User = require("../models/user");
-const Address = require("../models/address");
 
 const { validationResult } = require("express-validator");
 var jwt = require("jsonwebtoken");
@@ -26,35 +25,6 @@ exports.signup = (req, res) => {
       name: user.name,
       email: user.email,
       id: user._id,
-    });
-  });
-};
-
-exports.addAddress = (req, res) => {
-  const errors = validationResult(req);
-
-  if (!errors.isEmpty()) {
-    return res.status(422).json({
-      error: errors.array(),
-    });
-  }
-  const address = new Address(req.body);
-  address.save((err, address) => {
-    if (err) {
-      return res.status(400).json({
-        err: "NOT able to save address in DB",
-      });
-    }
-    res.json({
-      id: address._id,
-      name: address.name,
-      addresstype: address.addresstype,
-      addressLine1: address.addressLine1,
-      addressLine2: address.addressLine2,
-      landmark: address.landmark,
-      pincode: address.pincode,
-      district: address.district,
-      state: address.state,
     });
   });
 };
@@ -107,25 +77,4 @@ exports.signout = (req, res) => {
   res.json({
     message: "User signout successfully",
   });
-};
-
-//protected routes
-exports.isSignedIn = expressJwt({
-  secret: process.env.SECRET,
-  algorithms: ["HS256"],
-  userProperty: "auth",
-});
-
-//custom middlewares
-exports.isAuthenticated = (req, res, next) => {
-  let checker =
-    req.profile &&
-    req.auth &&
-    String(req.profile._id) === req.auth._id;
-  if (!checker) {
-    return res.status(403).json({
-      error: "ACCESS DENIED",
-    });
-  }
-  next();
 };

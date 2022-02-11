@@ -9,7 +9,7 @@ const {
   updateProduct,
   getAllProducts,
 } = require("../controllers/product");
-const { isSignedIn, isAuthenticated, isAdmin } = require("../controllers/auth");
+// const { isSignedIn, isAuthenticated, isAdmin } = require("../controllers/auth");
 const { getUserById } = require("../controllers/user");
 
 //all of params
@@ -26,13 +26,13 @@ router.post(
 router.get("/product/:productId", getProduct);
 router.get("/getPhoto/:productId", photo);
 
-//update route
-router.put(
-  "/product/:productId",
-  isSignedIn,
-  isAuthenticated,
-  updateProduct
-);
+// //update route
+// router.put(
+//   "/product/:productId",
+//   isSignedIn,
+//   isAuthenticated,
+//   updateProduct
+// );
 
 router.get("/getall", getAllProducts);
 
