@@ -39,20 +39,55 @@ const Cart = (props) => {
     var res = [];
     Data.forEach((record) => {
       if (record.mobile_no == justclick) {
-        res.push({
-          name: record.name,
-          mobile: record.mobile_no,
-          address: record.Address,
-          pincode: record.pin,
-          id: record.id,
-        });
+        res.push(hideDetails(record));
         setDisabled(false);
       }
     });
     console.log(res);
     setItem(res);
   };
+  const hideDetails = (obj) => {
+    var name = "";
+    var pincode = "";
+    var address = "";
+    var mobile = "+91";
 
+    console.log(obj.mobile_no);
+    for (var i = 0; i < obj.name.length; i++) {
+      if (i % 2 == 0) {
+        name += obj.name[i];
+      } else {
+        name += "x";
+      }
+    }
+    for (var i = 0; i < obj.pin.length; i++) {
+      if (i % 2 == 0) {
+        pincode += obj.pin[i];
+      } else {
+        pincode += "x";
+      }
+    }
+    for (var i = 0; i < obj.Address.length; i++) {
+      if (i % 2 == 0) {
+        address += obj.Address[i];
+      } else {
+        address += "x";
+      }
+    }
+    for (var i = 0; i < obj.mobile_no.toString().length; i++) {
+      mobile += "x";
+    }
+
+    console.log("hideen data is",
+      { name, pincode, address, mobile });
+    return {
+      name: name,
+      pincode: pincode,
+      address: address,
+      mobile: mobile,
+      id: obj.id,
+    };
+  };
   const computeTotal = () => {
     let totalAmount = 0;
     props.cart.forEach((item) => {
@@ -411,31 +446,37 @@ const Cart = (props) => {
               </button>
               <br />
               {showHiddenAddress()}
-              {ismanual == true &&
+              {ismanual == true && (
+                <>
+                  <ul key={address.mobile}>
+                    <h3>Your Entered Address</h3>
+                    <li id="li"> name : {address.fullname} </li>
+                    <br />
+                    <li id="li"> mobile :  {address.mobile}</li>
+                    <br />
 
-                    <>
-                      <ul key={address.mobile}>
-                        <h3>Your Entered Address</h3>
-                        <li> name :{address.fullname} </li>
-                        <br />
-                        <li> mobile: {address.mobile}</li>
-                        <br />
-                       
-                        <li>address type:{address.addresstype}</li>
-                        <br />
-                        <li>addressLine 1:{address.addressline1}</li>
-                        <br />
-                        <li>addressLine2:{address.addressline2}</li>
-                        <br />
-                        <li>landmark:{address.landmark}</li>
-                        <br />
-                        <li>pincode:{address.pincode}</li>
-                        <br />
-                        <li>city:{address.city}</li>
-                        <br />
-                        <li>state:{address.state}</li>
-                      </ul>
-                 </>}
+                    <li id="li">
+                      address type : {address.addresstype}
+                    </li>
+                    <br />
+                    <li id="li">
+                      addressLine1 : {address.addressline1}
+                    </li>
+                    <br />
+                    <li id="li">
+                      addressLine2 : {address.addressline2}
+                    </li>
+                    <br />
+                    <li id="li">landmark : {address.landmark}</li>
+                    <br />
+                    <li id="li">pincode : {address.pincode}</li>
+                    <br />
+                    <li id="li">city : {address.city}</li>
+                    <br />
+                    <li id="li">state : {address.state}</li>
+                  </ul>
+                </>
+              )}
 
               {finalJustPayAddress.length > 0 &&
                 finalJustPayAddress.map((data) => {
@@ -443,11 +484,11 @@ const Cart = (props) => {
                     <>
                       <ul key={data.id}>
                         <h3>Your Selected Address</h3>
-                        <li> name :{data.name} </li>
+                        <li id="li"> name : {data.name} </li>
                         <br />
-                        <li> mobile: {data.mobile}</li>
+                        <li id="li"> mobile : {data.mobile}</li>
                         <br />
-                        <li>address:{data.address}</li>
+                        <li id="li">address : {data.address}</li>
                       </ul>
                     </>
                   );
