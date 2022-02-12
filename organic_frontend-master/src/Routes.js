@@ -4,7 +4,7 @@ import Home from "./screens/Home/Home";
 import Signin from "./screens/Auth/Signin";
 import Signup from "./screens/Auth/Signup";
 import Error from "./screens/Error/Error";
-
+import Address from "./screens/Address/Address"
 const Routes = () => {
   return (
     <BrowserRouter>
@@ -12,6 +12,7 @@ const Routes = () => {
         <Route path="/" exact component={Home} />
         <Route path="/auth/signin" exact component={Signin} />
         <Route path="/auth/signup" exact component={Signup} />
+        <Route path="/addAddress" exact component={Address} />
         <Route path="*" component={Error} />
       </Switch>
     </BrowserRouter>

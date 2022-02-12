@@ -1,0 +1,203 @@
+
+.modalBackground {
+    width: 100vw;
+    height: 200vh;
+    background-color: white;
+    position: relative;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    /* align-items: flex-start; */
+    /* margin-right: 65%; */
+      flex-direction: column;
+  }
+  
+  .modalContainer {
+    width: 1200px;
+    height: 1000px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+  }
+  
+  .modalContainer .title {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .titleCloseBtn {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  
+  .modalContainer .body {
+    width: 1200px;
+ 
+    flex: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    text-align: center;
+  }
+  .inner{
+      width: 550px;
+      margin-right: 2em;
+      /* border:1px solid black; */
+      /* height: 00px; */
+  }
+  .line{
+      width: 1px;
+      height:250px;
+      border: 0.5px solid black;
+      margin-right: 2em;
+  }
+  .inputdiv{
+      /* display: flex; */
+      /* flex-direction: column;  */
+      display: flex;
+      flex-direction: column;
+      /* justify-content: flex-start; */
+     }
+  .modalContainer .footer {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+  .modalContainer .footer button {
+    width: 150px;
+    height: 45px;
+    margin: 10px;
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  #cancelBtn {
+    background-color: crimson;
+  }
+  .inputdiv>input{
+    width: 450px;
+  }
+  .rows>input{
+    /* background-color: red; */
+    width: 450px;
+  }
+  .rows{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 20px;
+    
+  }
+  .rowss{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 20px;
+    margin-top: 5px;
+    
+  }
+
+  .rowsright>input{
+    /* background-color: red; */
+    width: 450px;
+  }
+  .rowsright{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 20px;
+    
+  }
+  #btn_rt{
+    margin-top: 5px;
+  }
+  #btn_lt{
+    margin-top: 5px;
+  }
+  #or{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  ;
+  text-align: left;
+  margin-top: 10px;
+  }
+
+  .linecontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  label{
+    color: rgb(0, 0, 0);
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 1px;
+  }
+  .radiocontainer{
+display: flex;
+flex-direction: row;
+margin-left: 10px;
+  }
+
+  .form-check{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .address{
+    width: 200px;
+    height:200px;
+    border:1px solid rgb(3, 3, 3);
+    margin-right: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: rgb(253, 255, 226);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  .address:hover{
+    background-color: bisque;
+  }
+  
+  .p{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-left: 10px;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+
+  
+  #maindiv{
+    display: flex;
+  }
+  .addressinner{
+    width: 200px;
+    height:200px;
+    /* background-color: red; */
+  }
